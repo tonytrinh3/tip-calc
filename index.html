@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <p class="header">how much was your bill</p>
+        <input type="text" name="bill" class="billValue" >
+        <p class="class">how was your service</p>
+        <select name="" class = "options">
+            <option value=".1">10%</option>
+            <option value=".2">20%</option>
+            <option value=".3">30%</option>
+        </select>
+        </br>
+        <button type = "button" class="calcTip">Calculate Tip</button>
+
+
+    </form>
+    <div class="tipOutput"></div>
+    
+</body>
+<script>
+    const calculateTip = () =>{
+        const bill = document.querySelector('.billValue').value;
+
+        // const selectOption = document.querySelector('.options');
+        // const i = selectOption.selectedIndex;
+
+        // const multiplier = selectOption.options[i].value;
+
+        const multiplier = document.querySelector('.options').value;
+
+        const final = bill*multiplier;
+        console.log(final);
+        document.querySelector('.tipOutput').innerHTML = final;
+    };
+    //has to be function(){calculateTip} bc if you just do calculateTip() then the function auto triggers when you refresh page 
+    document.querySelector('.calcTip').onclick = function(){calculateTip()};
+  
+
+</script>
+</html>
